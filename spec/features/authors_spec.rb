@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "Authors page", :type => :feature do
+describe "Authors index page", :type => :feature do
   
   it "should display 'Listing authors'" do
     visit 'authors#authorIndex'
