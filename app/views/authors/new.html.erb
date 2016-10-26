@@ -1,2 +1,21 @@
 <h1>New author</h1>
-<p>Find me in app/views/authors/new.html.erb</p>
+<%= form_for :authors do |f| %>
+  <p>
+    <%= f.label :"first name" %><br>
+    <%= f.text_field :"first name" %>
+  </p>
+
+  <p>
+    <%= f.label :"last name" %><br>
+    <%= f.text_field :"last name" %>
+  </p>
+
+  <p>
+    <%= f.label :homepage %><br>
+    <%= f.text_field :homepage %>
+  </p>
+  
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

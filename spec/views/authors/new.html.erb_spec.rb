@@ -9,16 +9,16 @@ describe "New author page", :type => :feature do
 
   it "should have a first name field" do
 	visit 'new_author'
-	expect(page).to have_field("first name")
+	expect(page).to have_field("authors_first name")
   end
 
   it "should have a last name field" do
 	visit 'new_author'
-	expect(page).to have_field("last name")
+	expect(page).to have_field("authors_last name")
   end
 
   it "should have a homepage field" do
 	visit 'new_author'
-	expect(page).to have_field("homepage")
+	expect(page).to have_field("authors_homepage")
   end
 end
