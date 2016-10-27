@@ -6,11 +6,10 @@
   </tr>  
   
   <% @authors.each do |author| %>
-  <% @fullname = author.first_name + " " + author.last_name %>
   <tr>
 
     <td>
-      <%= link_to @fullname, author_path(author) %>
+      <%= link_to author.name, author_path(author) %>
     </td>
     <td>
       <%= author.homepage %>
