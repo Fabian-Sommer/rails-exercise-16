@@ -1,5 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "authors/index.html.erb", type: :view do
-  #pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe "Author index page", type: :view do
+  it "should have a 'show' link" do
+    have_link("show")
+  end
 end
