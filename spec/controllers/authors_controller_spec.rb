@@ -4,7 +4,7 @@ RSpec.describe AuthorsController, type: :controller do
 
   describe "GET #authorIndex" do
     it "returns http success" do
-      get :authorIndex
+      get :index
       expect(response).to have_http_status(:success)
     end
   end
