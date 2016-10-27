@@ -12,3 +12,7 @@
   <strong>Homepage:</strong>
   <%= @author.homepage %>
 </p>
+<%= link_to 'Destroy', author_path(@author),
+method: :delete,
+data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Back', authors_path %>
