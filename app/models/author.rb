@@ -1,4 +1,5 @@
 class Author < ActiveRecord::Base
+	validates :first_name, :last_name, presence: true
 	def first_name=(value)
 		self[:first_name] = value
 	end
