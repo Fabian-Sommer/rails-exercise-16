@@ -21,4 +21,5 @@ describe "New author page", type: :view do
   it "should have a create author button" do
 	have_button("Create Author")
   end
+  
 end
