@@ -1,0 +1,39 @@
+<h1>New paper</h1>
+<%= form_for :paper, url: papers_path do |f| %>
+  <% if @paper.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@paper.errors.count, "error") %> prohibited
+        this paper from being saved:
+      </h2>
+      <ul>
+        <% @paper.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.label :"name" %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :"venue" %><br>
+    <%= f.text_field :venue %>
+  </p>
+
+  <p>
+    <%= f.label :year %><br>
+    <%= f.text_field :year %>
+  </p>
+  <p>
+  Authors
+  <%= select("authors", "author_id", Author.all.collect{|a| [ a.name, a.id ] }, {include_hidden: false, :include_blank => '(none)'}, {:multiple => true, :size => 5}) %>
+  </p>
+  <p>
+    <%= f.submit "Create Paper" %>
+  </p>
+<% end %>
+  
+<%= link_to 'Back', papers_path %>

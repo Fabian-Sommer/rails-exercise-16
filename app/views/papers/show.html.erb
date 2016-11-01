@@ -1,0 +1,18 @@
+<p>
+  <strong>Name:</strong>
+  <%= @paper.name %>
+</p>
+
+<p>
+  <strong>Venue:</strong>
+  <%= @paper.venue %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @paper.year %>
+</p>
+<%= link_to 'Destroy', paper_path(@paper),
+method: :delete,
+data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Back', papers_path %>
