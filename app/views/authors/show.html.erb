@@ -12,7 +12,10 @@
   <strong>Homepage:</strong>
   <%= @author.homepage %>
 </p>
-<%= link_to 'Destroy', author_path(@author),
-method: :delete,
-data: { confirm: 'Are you sure?' } %>
+<p>
+  Papers:
+  <% @author.papers.each do |paper| %>
+  <%=  paper.name %>
+  <% end %>
+</p>
 <%= link_to 'Back', authors_path %>

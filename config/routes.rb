@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   post '/authors/new' => 'authors#create'
   post '/authors/:id/edit' => 'authors#update'
   delete '/authors/:id' => 'authors#destroy'
+  post '/papers/new' => 'papers#create'
+  post '/papers/:id/edit' => 'papers#update'
+  delete '/papers/:id' => 'papers#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

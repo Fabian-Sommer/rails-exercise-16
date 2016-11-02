@@ -13,7 +13,7 @@ class PapersController < ApplicationController
   end
   def create
 	@paper = Paper.new(paper_params) 
-	
+	#render plain: @paper.authors.first
 	if @paper.save
 		redirect_to papers_path
 	else
