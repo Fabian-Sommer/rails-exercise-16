@@ -16,8 +16,9 @@ class PapersController < ApplicationController
 	if @paper.save
 		params[:authors][:author_id].each do |id|
 			@author = Author.find(id)
-			@author.papers << @paper
-			@paper.authors << @author
+			unless @paper.authors.include?(@author)
+				@paper.authors << @author
+			end
 		end
 		redirect_to papers_path
 	else
@@ -27,9 +28,15 @@ class PapersController < ApplicationController
   def update
 	@paper = Paper.find(params[:id])
 	if @paper.update(paper_params)
-    redirect_to @paper
-  else
-    render 'edit'
+		params[:authors][:author_id].each do |ide|
+			@author = Author.find(ide)
+			unless @paper.authors.include?(@author)
+				@paper.authors << @author
+			end
+		end
+		redirect_to @paper
+	else
+		render 'edit'
   end
   end
   def destroy
