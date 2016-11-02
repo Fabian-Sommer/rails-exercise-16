@@ -12,9 +12,13 @@ class PapersController < ApplicationController
 	@paper = Paper.find(params[:id])
   end
   def create
-	@paper = Paper.new(paper_params) 
-	#render plain: @paper.authors.first
+	@paper = Paper.new(paper_params)
 	if @paper.save
+		params[:authors][:author_id].each do |id|
+			@author = Author.find(id)
+			@author.papers << @paper
+			@paper.authors << @author
+		end
 		redirect_to papers_path
 	else
 		render 'new'
@@ -38,6 +42,6 @@ class PapersController < ApplicationController
 
   private
   def paper_params
-    params.require(:paper).permit(:name, :venue, :year, :authors => [])
+    params.require(:paper).permit(:name, :venue, :year)
   end
 end
