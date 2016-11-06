@@ -7,10 +7,12 @@ Rails.application.routes.draw do
   #get 'new_author' => 'authors#new'
   post '/authors/new' => 'authors#create'
   post '/authors/:id/edit' => 'authors#update'
-  delete '/authors/:id' => 'authors#destroy'
+  #delete '/authors/:id' => 'authors#destroy'
+  get '/authors/:id/delete' => 'authors#destroy'
   post '/papers/new' => 'papers#create'
   post '/papers/:id/edit' => 'papers#update'
-  delete '/papers/:id' => 'papers#destroy'
+  #delete '/papers/:id' => 'papers#destroy'
+  get '/papers/:id/delete' => 'authors#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -23,10 +23,10 @@ class AuthorsController < ApplicationController
   def update
 	@author = Author.find(params[:id])
 	if @author.update(author_params)
-    redirect_to @author
-  else
-    render 'edit'
-  end
+		redirect_to @author
+	else
+		render 'edit'
+	end
   end
   def destroy
 	@author = Author.find(params[:id])

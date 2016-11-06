@@ -21,7 +21,8 @@
       <%= link_to 'Edit', edit_author_path(author) %>
     </td>
     <td>
-      <%= link_to 'Destroy', author_path(author), method: :delete %>
+      <%= link_to 'Destroy', author_path(author), method: :delete, data: { confirm: 'Are you sure?' } %>
+	  <a href="/authors/<%= author.id %>/delete">Delete</a>
     </td>
   </tr>
   <% end %>

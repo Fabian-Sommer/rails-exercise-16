@@ -37,10 +37,11 @@ class PapersController < ApplicationController
 		redirect_to @paper
 	else
 		render 'edit'
-  end
+	end
   end
   def destroy
 	@paper = Paper.find(params[:id])
+	@paper.authors.delete
 	@paper.destroy
 
 	redirect_to papers_path
