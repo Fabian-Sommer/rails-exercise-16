@@ -12,4 +12,11 @@
   <strong>Homepage:</strong>
   <%= @author.homepage %>
 </p>
+<p>
+  Papers:
+  <% @author.papers.each do |paper| %>
+  <%=  paper.name %>
+  <% end %>
+</p>
+
 <%= link_to 'Back', authors_path %>
