@@ -1,7 +1,7 @@
 class CreatePapers < ActiveRecord::Migration
   def change
     create_table :papers do |t|
-      t.string :name
+      t.string :title
       t.string :venue
       t.integer :year
 
