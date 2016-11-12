@@ -28,7 +28,7 @@
   </p>
   <p>
   Authors
-  <%= select("authors", "author_id", Author.all.collect{|a| [ a.name, a.id ] }, {include_hidden: false, :include_blank => '(none)'}, {:multiple => true, :size => 5}) %>
+  <%= f.collection_select(:authors, Author.all, :id, :name, {include_hidden: false, :include_blank => '(none)'}, {:multiple => true, :size => 5}) %>
   </p>
   <p>
     <%= f.submit "Create Paper" %>

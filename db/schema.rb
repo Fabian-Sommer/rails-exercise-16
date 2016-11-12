@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 20161029152349) do
   add_index "authors_papers", ["paper_id"], name: "index_authors_papers_on_paper_id"
 
   create_table "papers", force: :cascade do |t|
-    t.string   "name"
-    t.text     "venue"
+    t.string   "title"
+    t.string   "venue"
     t.integer  "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

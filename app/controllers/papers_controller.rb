@@ -14,12 +14,6 @@ class PapersController < ApplicationController
   def create
 	@paper = Paper.new(paper_params)
 	if @paper.save
-		params[:authors][:author_id].each do |id|
-			@author = Author.find(id)
-			unless @paper.authors.include?(@author)
-				@paper.authors << @author
-			end
-		end
 		redirect_to papers_path
 	else
 		render 'new'
@@ -28,12 +22,6 @@ class PapersController < ApplicationController
   def update
 	@paper = Paper.find(params[:id])
 	if @paper.update(paper_params)
-		params[:authors][:author_id].each do |ide|
-			@author = Author.find(ide)
-			unless @paper.authors.include?(@author)
-				@paper.authors << @author
-			end
-		end
 		redirect_to @paper
 	else
 		render 'edit'
@@ -50,6 +38,6 @@ class PapersController < ApplicationController
 
   private
   def paper_params
-    params.require(:paper).permit(:title, :venue, :year)
+    params.require(:paper).permit(:title, :venue, :year, authors: [:id])
   end
 end
